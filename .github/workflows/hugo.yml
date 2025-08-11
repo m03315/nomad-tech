@@ -34,6 +34,8 @@ jobs:
 
       - name: Build and Test
         run: |
+          mkdir -p exampleSite/themes/nomad-tech
+          rsync -av --exclude='exampleSite' . exampleSite/themes/nomad-tech/
           cd exampleSite
           hugo --minify --buildDrafts
           
