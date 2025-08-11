@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div style="margin-top: 5rem; padding: 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="color: #00d4ff; font-size: 3rem; margin-bottom: 1rem;">{{ .Title }}</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">{{ .Content }}</p>
+        </div>
+        <div class="social-grid">
+            {{ range .Site.Params.social }}
+            <div class="social-card">
+                <div class="social-icon {{ .class }}">{{ .icon }}</div>
+                <h3>{{ .name }}</h3>
+                <p>{{ .description }}</p>
+                <a href="{{ .url }}" class="btn btn-primary" style="margin-top: 1rem;">{{ .button_text }}</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

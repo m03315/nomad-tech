@@ -1,0 +1,40 @@
+{{ $title := .Title }}
+{{ if .IsHome }}{{ $title = .Site.Title }}{{ else }}{{ $title = printf "%s | %s" .Title .Site.Title }}{{ end }}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ if .IsHome }}WebSite{{ else if eq .Type "posts" }}BlogPosting{{ else }}WebPage{{ end }}",
+  "name": "{{ $title }}",
+  "url": "{{ .Permalink }}",
+  {{ if .IsHome }}
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  }
+  {{ else if eq .Type "posts" }}
+  "headline": "{{ .Title }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  }
+  {{ end }}
+}
+</script>

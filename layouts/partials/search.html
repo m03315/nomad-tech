@@ -1,0 +1,45 @@
+<div class="search-container" style="margin: 2rem 0;">
+    <input type="text" id="search-input" placeholder="Search posts..." style="width: 100%; padding: 12px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; font-size: 1rem;">
+    <div id="search-results" style="margin-top: 1rem;"></div>
+</div>
+
+<script>
+let searchIndex = [];
+{{ range where .Site.RegularPages "Type" "posts" }}
+searchIndex.push({
+    title: {{ .Title | jsonify }},
+    content: {{ .Plain | jsonify }},
+    url: {{ .Permalink | jsonify }},
+    date: {{ .Date.Format "2006-01-02" | jsonify }},
+    categories: {{ .Params.categories | jsonify }}
+});
+{{ end }}
+
+document.getElementById('search-input').addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase();
+    const results = document.getElementById('search-results');
+    
+    if (query.length < 2) {
+        results.innerHTML = '';
+        return;
+    }
+    
+    const matches = searchIndex.filter(post => 
+        post.title.toLowerCase().includes(query) || 
+        post.content.toLowerCase().includes(query) ||
+        (post.categories && post.categories.some(cat => cat.toLowerCase().includes(query)))
+    ).slice(0, 5);
+    
+    if (matches.length === 0) {
+        results.innerHTML = '<p style="color: #888;">No results found</p>';
+        return;
+    }
+    
+    results.innerHTML = matches.map(post => `
+        <div class="search-result" style="background: rgba(255,255,255,0.05); padding: 1rem; margin: 0.5rem 0; border-radius: 10px;">
+            <h4><a href="${post.url}" style="color: #00d4ff; text-decoration: none;">${post.title}</a></h4>
+            <p style="color: #888; font-size: 0.9rem;">${post.date}</p>
+        </div>
+    `).join('');
+});
+</script>

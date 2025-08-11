@@ -1,0 +1,40 @@
+[home]
+other = "Home"
+[social]
+other = "Social Media"
+[blog]
+other = "Blog"
+[portfolio]
+other = "Portfolio"
+[contact]
+other = "Contact"
+[latest_blog]
+other = "Latest Blog"
+[all_posts]
+other = "All"
+[read_more]
+other = "Read More"
+[prev_page]
+other = "Previous"
+[next_page]
+other = "Next"
+[date_format]
+other = "January 2006"
+[date_format_full]
+other = "January 2, 2006"
+[about]
+other = "About"
+[travel]
+other = "Travel"
+[hero_greeting]
+other = "Hi, I'm"
+[follow_social]
+other = "Follow My Social Media"
+[learn_more]
+other = "Learn More"
+[social_description]
+other = "Sharing insights and experiences across platforms, welcome to connect"
+[portfolio_title]
+other = "Portfolio"
+[view_details]
+other = "View Details"

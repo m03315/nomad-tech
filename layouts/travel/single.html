@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div style="margin-top: 5rem; padding: 2rem;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="color: #00d4ff; font-size: 3rem; margin-bottom: 1rem;">{{ .Title }}</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">{{ .Description }}</p>
+        </div>
+        {{ partial "travel-timeline.html" . }}
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default "zh-CN" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ partial "seo.html" . }}
+    {{ partial "head.html" . }}
+    {{ partial "analytics.html" . }}
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    {{ partial "header.html" . }}
+    <main id="main" role="main">
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+</body>
+</html>
