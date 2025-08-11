@@ -1,0 +1,102 @@
+baseURL = "https://example.com"
+defaultContentLanguage = "zh"
+theme = "nomad-tech"
+
+[pagination]
+  pagerSize = 6
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[languages]
+  [languages.zh]
+    languageCode = "zh-CN"
+    title = "Your Name - Digital Nomad | Tech | Life"
+    weight = 1
+  [languages.en]
+    languageCode = "en-US"
+    title = "Your Name - Digital Nomad | Tech Insights | Life Stories"
+    weight = 2
+  [languages.fr]
+    languageCode = "fr-FR"
+    title = "Your Name - Nomade Numérique | Tech | Vie"
+    weight = 3
+
+[params]
+  author = "Your Name"
+  logo = "YN"
+  subtitle = "Digital Nomad • Tech Explorer • Life Recorder"
+  description = "Sharing tech insights, recording nomad life, providing practical guides"
+
+  # Social Media Links
+  [[params.social]]
+    name = "YouTube"
+    class = "youtube"
+    icon = "📺"
+    description = "Tech reviews and nomad vlogs"
+    url = "https://youtube.com/@yourhandle"
+    button_text = "Visit Channel"
+
+  [[params.social]]
+    name = "Twitter"
+    class = "wechat"
+    icon = "🐦"
+    description = "Tech thoughts and daily updates"
+    url = "https://twitter.com/yourhandle"
+    button_text = "Follow Me"
+
+  # Portfolio Items
+  [[params.portfolio]]
+    title = "Digital Nomad Community App"
+    type = "Mobile Application"
+    icon = "📱"
+    description = "A comprehensive platform for nomads to connect and collaborate"
+    tags = ["React Native", "Node.js", "MongoDB"]
+    project_url = "/projects/nomad-app/"
+
+  [[params.portfolio]]
+    title = "Another Project"
+    type = "Web Application"
+    icon = "🌐"
+    description = "Web application description"
+    tags = ["React", "Vue.js"]
+
+  # Travel Timeline
+  [[params.travels]]
+    city = "Bangkok"
+    country = "Thailand"
+    flag = "🇹🇭"
+    period = "2024.01 - 2024.03"
+    description = "Started my nomad journey in the vibrant capital of Thailand"
+    highlights = ["Co-working spaces", "Street food", "Tech meetups"]
+
+  [[params.travels]]
+    city = "Chiang Mai"
+    country = "Thailand"
+    flag = "🇹🇭"
+    period = "2024.04 - 2024.06"
+    description = "Digital nomad hub with amazing community and low cost of living"
+    highlights = ["Nomad Summit", "Temples", "Mountain views"]
+
+  [[params.travels]]
+    city = "Bali"
+    country = "Indonesia"
+    flag = "🇮🇩"
+    period = "2024.07 - Present"
+    description = "Current base with perfect blend of work and surf lifestyle"
+    highlights = ["Surfing", "Rice terraces", "Startup scene"]
+
+  # Contact Information
+  [[params.contact]]
+    name = "Email"
+    icon = "📧"
+    value = "your@email.com"
+
+  [[params.contact]]
+    name = "Twitter"
+    icon = "🐦"
+    value = "@yourhandle"
+
+  # Analytics (optional)
+  # googleAnalytics = "G-XXXXXXXXXX"

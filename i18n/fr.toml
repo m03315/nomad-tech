@@ -1,0 +1,40 @@
+[home]
+other = "Accueil"
+[social]
+other = "Réseaux Sociaux"
+[blog]
+other = "Blog"
+[portfolio]
+other = "Portfolio"
+[contact]
+other = "Contact"
+[latest_blog]
+other = "Dernier Blog"
+[all_posts]
+other = "Tous"
+[read_more]
+other = "Lire Plus"
+[prev_page]
+other = "Précédent"
+[next_page]
+other = "Suivant"
+[date_format]
+other = "janvier 2006"
+[date_format_full]
+other = "2 janvier 2006"
+[about]
+other = "À propos"
+[travel]
+other = "Voyage"
+[hero_greeting]
+other = "Salut, je suis"
+[follow_social]
+other = "Suivez Mes Réseaux Sociaux"
+[learn_more]
+other = "En Savoir Plus"
+[social_description]
+other = "Partage d'idées et d'expériences sur différentes plateformes"
+[portfolio_title]
+other = "Portfolio"
+[view_details]
+other = "Voir Détails"

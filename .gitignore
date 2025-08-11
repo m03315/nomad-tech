@@ -1,0 +1,27 @@
+# Hugo
+/public/
+/resources/
+.hugo_build.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node.js (if using npm/yarn for assets)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

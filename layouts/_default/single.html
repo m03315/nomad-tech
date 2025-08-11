@@ -1,0 +1,7 @@
+{{ define "main" }}
+<article style="margin-top: 5rem; padding: 2rem; background: rgba(255, 255, 255, 0.02); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+    <h1 style="color: #00d4ff; margin-bottom: 1rem;">{{ .Title }}</h1>
+    <div style="color: #888; margin-bottom: 2rem;">{{ .Date.Format (i18n "date_format_full") }}</div>
+    <div style="line-height: 1.8;">{{ .Content }}</div>
+</article>
+{{ end }}

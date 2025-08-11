@@ -1,0 +1,176 @@
+{{ define "main" }}
+<div class="project-container">
+    <article class="project-content">
+        <div class="project-header">
+            <div class="project-icon">{{ .Params.icon | default "🚀" }}</div>
+            <div class="project-info">
+                <h1>{{ .Title }}</h1>
+                <p class="project-type">{{ .Params.type }}</p>
+                <div class="project-meta">
+                    <span>{{ .Params.duration }}</span>
+                    {{ if .Params.status }}
+                    <span class="status-{{ .Params.status }}">{{ .Params.status | title }}</span>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        {{ if .Params.tech_stack }}
+        <div class="tech-stack">
+            <h3>Tech Stack</h3>
+            <div class="tech-tags">
+                {{ range .Params.tech_stack }}
+                <span class="tech-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+
+        <div class="project-body">
+            {{ .Content }}
+        </div>
+
+        {{ if .Params.links }}
+        <div class="project-links">
+            {{ range .Params.links }}
+            <a href="{{ .url }}" class="project-link" target="_blank">
+                <span>{{ .icon }}</span>
+                {{ .name }}
+            </a>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <div class="back-to-portfolio">
+            <a href="/#portfolio" class="btn btn-secondary">← Back to Portfolio</a>
+        </div>
+    </article>
+</div>
+
+<style>
+.project-container {
+    margin-top: 5rem;
+    padding: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-content {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-icon {
+    font-size: 4rem;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #00d4ff, #9d50bb);
+    border-radius: 20px;
+}
+
+.project-info h1 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.project-type {
+    color: #9d50bb;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.project-meta {
+    display: flex;
+    gap: 1rem;
+    color: #888;
+}
+
+.status-active { color: #28ca42; }
+.status-completed { color: #00d4ff; }
+.status-archived { color: #888; }
+
+.tech-stack {
+    margin-bottom: 3rem;
+}
+
+.tech-stack h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background: rgba(0, 212, 255, 0.2);
+    color: #00d4ff;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.project-body {
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.project-body h2 {
+    color: #9d50bb;
+    margin: 2rem 0 1rem 0;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px 20px;
+    background: rgba(157, 80, 187, 0.2);
+    color: #9d50bb;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background: rgba(157, 80, 187, 0.3);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .project-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .project-content {
+        padding: 2rem;
+    }
+}
+</style>
+{{ end }}

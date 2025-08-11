@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div style="margin-top: 5rem; padding: 2rem; background: rgba(255, 255, 255, 0.02); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+    <h1 style="color: #00d4ff; margin-bottom: 2rem; text-align: center;">{{ .Title }}</h1>
+    <div class="blog-posts">
+        {{ range .Pages }}
+        <article class="blog-post">
+            <h3>{{ .Title }}</h3>
+            <div class="blog-meta">
+                {{ .Date.Format (i18n "date_format") }} • 
+                {{ range .Params.categories }}
+                <span class="category-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            <p>{{ .Summary }}</p>
+            <a href="{{ .Permalink }}" class="btn btn-secondary">{{ i18n "read_more" }}</a>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

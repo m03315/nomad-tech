@@ -1,0 +1,122 @@
+<div class="travel-timeline">
+    <h3 style="color: #00d4ff; margin-bottom: 2rem; text-align: center;">🌍 Digital Nomad Journey</h3>
+    <div class="timeline">
+        {{ range .Site.Params.travels }}
+        <div class="timeline-item">
+            <div class="timeline-marker">
+                <span class="location-flag">{{ .flag }}</span>
+            </div>
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h4>{{ .city }}, {{ .country }}</h4>
+                    <span class="timeline-date">{{ .period }}</span>
+                </div>
+                <p>{{ .description }}</p>
+                {{ if .highlights }}
+                <div class="highlights">
+                    {{ range .highlights }}
+                    <span class="highlight-tag">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+
+<style>
+.travel-timeline {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #00d4ff, #9d50bb);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: #1a1a2e;
+    border: 2px solid #00d4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-flag {
+    font-size: 1.2rem;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 3px solid #00d4ff;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-header h4 {
+    color: #00d4ff;
+    margin: 0;
+}
+
+.timeline-date {
+    color: #9d50bb;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.highlights {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.highlight-tag {
+    background: rgba(157, 80, 187, 0.2);
+    color: #9d50bb;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>

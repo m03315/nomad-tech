@@ -1,0 +1,40 @@
+[home]
+other = "首页"
+[social]
+other = "社交媒体"
+[blog]
+other = "博客"
+[portfolio]
+other = "作品集"
+[contact]
+other = "联系我"
+[latest_blog]
+other = "最新博客"
+[all_posts]
+other = "全部"
+[read_more]
+other = "阅读全文"
+[prev_page]
+other = "上一页"
+[next_page]
+other = "下一页"
+[date_format]
+other = "2006年1月"
+[date_format_full]
+other = "2006年1月2日"
+[about]
+other = "关于"
+[travel]
+other = "旅行"
+[hero_greeting]
+other = "Hi, 我是"
+[follow_social]
+other = "关注我的社交媒体"
+[learn_more]
+other = "了解更多"
+[social_description]
+other = "在不同平台分享我的见解和经历，欢迎关注交流"
+[portfolio_title]
+other = "作品展示"
+[view_details]
+other = "查看详情"
