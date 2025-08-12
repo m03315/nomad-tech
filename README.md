@@ -50,14 +50,14 @@ A modern, multilingual Hugo theme designed for digital nomads, tech professional
 
 ## 📖 Documentation
 
-- [Configuration Guide](docs/configuration.md)
-- [Content Creation](docs/content.md)
-- [Customization](docs/customization.md)
-- [Deployment](docs/deployment.md)
+- **Configuration Guide:** See `exampleSite/hugo.toml` for complete configuration options
+- **Content Creation:** Check `exampleSite/content/` for content structure examples
+- **Customization:** Modify theme parameters in your site's `hugo.toml`
+- **Deployment:** Use the included GitHub Actions workflow for automated deployment
 
 ## 🎯 Demo
 
-- **Live Demo:** [nomad-tech-demo.netlify.app](https://nomad-tech-demo.netlify.app)
+- **Live Demo:** [https://m03315.github.io/nomad-tech/](https://m03315.github.io/nomad-tech/)
 - **Example Site:** See `exampleSite/` directory
 
 ## 🤝 Contributing
