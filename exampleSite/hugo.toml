@@ -24,8 +24,8 @@ theme = "nomad-tech"
     weight = 3
 
 [params]
-  author = "Your Name"
-  logo = "YN"
+  author = "m03315"
+  logo = "NOMAD-TECH"
   subtitle = "Digital Nomad • Tech Explorer • Life Recorder"
   description = "Sharing tech insights, recording nomad life, providing practical guides"
 
