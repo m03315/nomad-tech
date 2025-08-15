@@ -93,5 +93,5 @@ theme = "nomad-tech"
     wechat = "m03315_"
     twitter = "@m03315_"
 
-  # Analytics (optional)
-  googleAnalytics = "G-2310RJEC91"
+# Analytics (optional)
+googleAnalytics = "G-2310RJEC91"
