@@ -1,18 +1,18 @@
 <nav role="navigation" aria-label="Main navigation">
     <div class="container">
         <div class="nav-container">
-            <a href="/" class="logo" aria-label="{{ .Site.Title }} - Home">{{ .Site.Params.logo | default "GP" }}</a>
+            <a href="{{ .Site.BaseURL }}" class="logo" aria-label="{{ .Site.Title }} - Home">{{ .Site.Params.logo | default "GP" }}</a>
             <ul class="nav-links" id="nav-menu">
-                <li><a href="/" aria-current="false">{{ i18n "home" }}</a></li>
-                <li><a href="/social/" aria-current="false">{{ i18n "social" }}</a></li>
-                <li><a href="/posts/" aria-current="false">{{ i18n "blog" }}</a></li>
-                <li><a href="/portfolio/" aria-current="false">{{ i18n "portfolio" }}</a></li>
-                <li><a href="/about/" aria-current="false">{{ i18n "about" }}</a></li>
-                <li><a href="/travel/" aria-current="false">{{ i18n "travel" }}</a></li>
+                <li><a href="{{ .Site.BaseURL }}" aria-current="false">{{ i18n "home" }}</a></li>
+                <li><a href="{{ .Site.BaseURL }}social/" aria-current="false">{{ i18n "social" }}</a></li>
+                <li><a href="{{ .Site.BaseURL }}posts/" aria-current="false">{{ i18n "blog" }}</a></li>
+                <li><a href="{{ .Site.BaseURL }}portfolio/" aria-current="false">{{ i18n "portfolio" }}</a></li>
+                <li><a href="{{ .Site.BaseURL }}about/" aria-current="false">{{ i18n "about" }}</a></li>
+                <li><a href="{{ .Site.BaseURL }}travel/" aria-current="false">{{ i18n "travel" }}</a></li>
             </ul>
             <div class="lang-switcher" role="group" aria-label="Language selection">
                 {{ range .Site.Languages }}
-                <a href="{{ if eq .Lang "zh" }}/{{ else }}/{{ .Lang }}/{{ end }}" 
+                <a href="{{ if eq .Lang "zh" }}{{ $.Site.BaseURL }}{{ else }}{{ $.Site.BaseURL }}{{ .Lang }}/{{ end }}" 
                    class="lang-link {{ if eq .Lang $.Site.Language.Lang }}active{{ end }}" 
                    aria-label="Switch to {{ .LanguageName }}" 
                    {{ if eq .Lang $.Site.Language.Lang }}aria-current="true"{{ end }}>{{ .Lang | upper }}</a>
