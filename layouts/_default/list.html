@@ -1,6 +1,14 @@
 {{ define "main" }}
 <div style="margin-top: 5rem; padding: 2rem; background: rgba(255, 255, 255, 0.02); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
     <h1 style="color: #00d4ff; margin-bottom: 2rem; text-align: center;">{{ .Title }}</h1>
+    
+    {{ if .Content }}
+    <div style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+        {{ .Content }}
+    </div>
+    {{ end }}
+    
+    {{ if .Pages }}
     <div class="blog-posts">
         {{ range .Pages }}
         <article class="blog-post">
@@ -11,5 +19,6 @@
         </article>
         {{ end }}
     </div>
+    {{ end }}
 </div>
 {{ end }}

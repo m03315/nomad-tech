@@ -9,7 +9,6 @@ class NomadTheme {
     this.setupParticles();
     this.setupAccessibility();
     this.setupTouchGestures();
-    this.showSection('home');
   }
 
   // Navigation
@@ -28,17 +27,10 @@ class NomadTheme {
       });
     }
 
-    // Navigation links
+    // Navigation links - no SPA behavior, just mobile menu handling
     navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const href = link.getAttribute('href');
-        const sectionId = href.replace('/', '').replace('#', '') || 'home';
-        
-        this.showSection(sectionId);
-        this.updateActiveNav(link);
-        
-        // Close mobile menu
+      link.addEventListener('click', () => {
+        // Close mobile menu on navigation
         navLinksContainer.classList.remove('active');
         if (mobileMenuBtn) {
           mobileMenuBtn.setAttribute('aria-expanded', 'false');

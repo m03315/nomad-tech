@@ -25,3 +25,19 @@ yarn-error.log*
 # Temporary files
 *.tmp
 *.temp
+
+# Docker files (keep local only)
+Dockerfile
+docker-compose.yml
+docker-compose.yaml
+.dockerignore
+
+# Hugo development
+.hugo/
+/exampleSite/public/
+/exampleSite/resources/
+
+# Local environment
+.env
+.env.local
+.env.*.local

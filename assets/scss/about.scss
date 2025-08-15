@@ -1,0 +1,153 @@
+.about-container {
+    margin-top: 5rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content {
+    max-width: 800px;
+    width: 100%;
+    background: #1a1a2e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.terminal-header {
+    background: #16213e;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+    margin-right: 15px;
+    
+    span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+}
+
+.btn-close { background: #ff5f57; }
+.btn-minimize { background: #ffbd2e; }
+.btn-maximize { background: #28ca42; }
+
+.terminal-title {
+    color: #888;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.9rem;
+}
+
+.terminal-body {
+    padding: 20px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    line-height: 1.6;
+}
+
+.prompt-line {
+    margin: 1.5rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prompt {
+    color: #00d4ff;
+    font-weight: bold;
+}
+
+.command {
+    color: #9d50bb;
+    font-weight: bold;
+}
+
+.content {
+    color: #e0e0e0;
+    margin: 1rem 0;
+    
+    h1 {
+        color: #00d4ff;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        font-family: inherit;
+    }
+    
+    h2 {
+        color: #9d50bb;
+        font-size: 1.3rem;
+        margin: 1.5rem 0 0.8rem 0;
+        font-family: inherit;
+    }
+    
+    p {
+        margin-bottom: 1rem;
+    }
+    
+    strong {
+        color: #00d4ff;
+    }
+}
+
+.contact-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-grid {
+    margin-top: 1rem;
+}
+
+.contact-file {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 0;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: rgba(0, 212, 255, 0.1);
+        padding-left: 10px;
+        border-radius: 5px;
+    }
+}
+
+.file-icon {
+    font-size: 1.2rem;
+    width: 25px;
+}
+
+.file-name {
+    color: #00d4ff;
+    min-width: 120px;
+    font-weight: bold;
+}
+
+.file-content {
+    color: #9d50bb;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 1rem;
+        margin-top: 4rem;
+    }
+    
+    .terminal-body {
+        padding: 15px;
+    }
+    
+    .contact-file {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}

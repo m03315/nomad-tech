@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section id="home" class="hero">
+<section class="hero">
     <div class="hero-content">
         <h1>{{ i18n "hero_greeting" }} {{ .Site.Params.author | default "m03315" }}</h1>
         <p>{{ .Site.Params.subtitle | default "数字游民 • 科技探索者 • 生活记录者" }}</p>
@@ -10,86 +10,5 @@
         </div>
     </div>
 </section>
-
-<div id="social" class="content-section">
-    <h2>{{ i18n "social" }}</h2>
-    <p style="text-align: center; margin-bottom: 2rem; opacity: 0.9;">{{ i18n "social_description" }}</p>
-    <div class="social-grid">
-        {{ range .Site.Params.social }}
-        <div class="social-card">
-            <div class="social-icon {{ .class }}">{{ .icon }}</div>
-            <h3>{{ .name }}</h3>
-            <p>{{ .description }}</p>
-            <a href="{{ .url }}" class="btn btn-primary" style="margin-top: 1rem;">{{ .button_text }}</a>
-        </div>
-        {{ end }}
-    </div>
-</div>
-
-<div id="blog" class="content-section">
-    <h2>{{ i18n "latest_blog" }}</h2>
-
-    <div class="blog-categories" style="text-align: center; margin-bottom: 2rem;" role="group" aria-label="Filter blog posts by category">
-        <button class="category-btn active" onclick="filterPosts('all')" aria-pressed="true" role="button">全部</button>
-        {{ range .Site.Taxonomies.categories }}
-        <button class="category-btn" onclick="filterPosts('{{ .Page.Title }}')" aria-pressed="false" role="button">{{ .Page.Title }}</button>
-        {{ end }}
-    </div>
-    <div class="blog-posts" id="blog-posts" role="region" aria-label="Blog posts">
-        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 6 }}
-        {{ range $paginator.Pages }}
-        <article class="blog-post" data-categories="{{ delimit .Params.categories "," }}">
-            <h3><a href="{{ .Permalink }}" aria-describedby="meta-{{ .File.UniqueID }}">{{ .Title }}</a></h3>
-            <div class="blog-meta" id="meta-{{ .File.UniqueID }}">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format (i18n "date_format") }}</time> • 
-                {{ range .Params.categories }}
-                <span class="category-tag">{{ . }}</span>
-                {{ end }}
-            </div>
-            <p>{{ .Summary }}</p>
-            <a href="{{ .Permalink }}" class="btn btn-secondary" aria-label="Read more about {{ .Title }}">{{ i18n "read_more" }}</a>
-        </article>
-        {{ end }}
-    </div>
-    {{ if gt $paginator.TotalPages 1 }}
-    <div class="pagination" style="text-align: center; margin-top: 2rem;">
-        {{ if $paginator.HasPrev }}
-        <a href="{{ $paginator.Prev.URL }}" class="btn btn-secondary">{{ i18n "prev_page" }}</a>
-        {{ end }}
-        {{ range $paginator.Pagers }}
-        <a href="{{ .URL }}" class="btn {{ if eq . $paginator }}btn-primary{{ else }}btn-secondary{{ end }}">{{ .PageNumber }}</a>
-        {{ end }}
-        {{ if $paginator.HasNext }}
-        <a href="{{ $paginator.Next.URL }}" class="btn btn-secondary">{{ i18n "next_page" }}</a>
-        {{ end }}
-    </div>
-    {{ end }}
-</div>
-
-<section id="portfolio" class="content-section" aria-labelledby="portfolio-heading">
-    <h2 id="portfolio-heading">{{ i18n "portfolio_title" }}</h2>
-    <div class="portfolio-grid" role="region" aria-label="Portfolio projects">
-        {{ range .Site.Params.portfolio }}
-        <article class="portfolio-item">
-            <div class="portfolio-image" aria-hidden="true">{{ .icon }} {{ .type }}</div>
-            <div class="portfolio-content">
-                <h3>{{ .title }}</h3>
-                <p>{{ .description }}</p>
-                <div style="margin-top: 1rem;" role="list" aria-label="Technologies used">
-                    {{ range .tags }}
-                    <span role="listitem" style="background: rgba(0,212,255,0.2); padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">{{ . }}</span>
-                    {{ end }}
-                </div>
-                {{ if .project_url }}
-                <div style="margin-top: 1rem;">
-                    <a href="{{ .project_url }}" class="btn btn-secondary" aria-label="View details for {{ .title }}">{{ i18n "view_details" }}</a>
-                </div>
-                {{ end }}
-            </div>
-        </article>
-        {{ end }}
-    </div>
-</section>
-
 
 {{ end }}

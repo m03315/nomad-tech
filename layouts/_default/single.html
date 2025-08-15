@@ -1,7 +1,29 @@
 {{ define "main" }}
-<article style="margin-top: 5rem; padding: 2rem; background: rgba(255, 255, 255, 0.02); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
-    <h1 style="color: #00d4ff; margin-bottom: 1rem;">{{ .Title }}</h1>
-    <div style="color: #888; margin-bottom: 2rem;">{{ .Date.Format (i18n "date_format_full") }}</div>
-    <div style="line-height: 1.8;">{{ .Content }}</div>
-</article>
+<div class="post-container">
+    <article class="post-content">
+        <div class="post-terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">{{ .Title }}.md</div>
+        </div>
+        <div class="post-terminal-body">
+            <div class="prompt-line">
+                <span class="prompt">$</span>
+                <span class="command">cat "{{ .Title }}.md"</span>
+            </div>
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                {{ range .Params.categories }}
+                <span class="category-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            <div class="content">
+                {{ .Content }}
+            </div>
+        </div>
+    </article>
+</div>
 {{ end }}

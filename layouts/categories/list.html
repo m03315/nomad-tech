@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div style="margin-top: 5rem; padding: 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h1 style="color: #00d4ff; font-size: 3rem; margin-bottom: 2rem; text-align: center;">所有分类</h1>
+        
+        <div class="categories-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            {{ range .Data.Terms }}
+            <div class="category-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="color: #00d4ff; margin-bottom: 1rem;">{{ .Page.Title }}</h3>
+                <p style="opacity: 0.8; margin-bottom: 1rem;">{{ .Count }} 篇文章</p>
+                <a href="{{ .Page.Permalink }}" class="btn btn-primary">查看文章</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
