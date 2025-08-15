@@ -29,6 +29,9 @@ theme = "nomad-tech"
   subtitle = "Digital Nomad • Tech Explorer • Life Recorder"
   description = "Sharing tech insights, recording nomad life, providing practical guides"
 
+  # Analytics (optional)
+  googleAnalytics = "G-2310RJEC91"
+
   # Social Media Links
   [[params.social]]
     name = "YouTube"
@@ -92,6 +95,3 @@ theme = "nomad-tech"
     email = "me@m03315.top"
     wechat = "m03315_"
     twitter = "@m03315_"
-
-# Analytics (optional)
-googleAnalytics = "G-2310RJEC91"
