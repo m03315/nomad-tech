@@ -1,5 +1,5 @@
 {{ $scss := resources.Get "scss/main.scss" }}
-{{ $css := $scss | css.Sass | resources.Minify | resources.Fingerprint }}
+{{ $css := $scss | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
 {{ $js := resources.Get "js/main.js" }}

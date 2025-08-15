@@ -273,9 +273,24 @@ section {
 
 .blog-post {
   h3 {
-    color: var(--primary-color);
     margin-bottom: 1rem;
+    
+    a {
+      color: #f0f0f0;
+      text-decoration: none;
+      transition: var(--transition);
+      
+      &:hover {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+    }
   }
+}
+
+.read-more-container {
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
 .blog-meta {
@@ -422,6 +437,12 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+// About page styles
+@import 'about';
+
+// Posts page styles
+@import 'posts';
 
 // Reduced motion
 @media (prefers-reduced-motion: reduce) {

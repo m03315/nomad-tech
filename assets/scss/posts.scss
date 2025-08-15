@@ -1,0 +1,108 @@
+.post-container {
+    margin-top: 5rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.post-content {
+    max-width: 900px;
+    width: 100%;
+    background: #1a1a2e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.post-terminal-header {
+    background: #16213e;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.post-terminal-body {
+    padding: 20px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    line-height: 1.6;
+    color: #e0e0e0;
+    
+    h1 {
+        color: #00d4ff;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        font-family: inherit;
+    }
+    
+    h2, h3, h4, h5, h6 {
+        color: #9d50bb;
+        margin: 1.5rem 0 0.8rem 0;
+        font-family: inherit;
+    }
+    
+    p {
+        margin-bottom: 1rem;
+    }
+    
+    strong {
+        color: #00d4ff;
+    }
+    
+    code {
+        background: rgba(0, 212, 255, 0.1);
+        padding: 2px 6px;
+        border-radius: 3px;
+        color: #00d4ff;
+    }
+    
+    pre {
+        background: #0a0a0a;
+        padding: 1rem;
+        border-radius: 5px;
+        overflow-x: auto;
+        margin: 1rem 0;
+        border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+    
+    blockquote {
+        border-left: 3px solid #9d50bb;
+        padding-left: 1rem;
+        margin: 1rem 0;
+        color: #ccc;
+    }
+    
+    ul, ol {
+        margin: 1rem 0;
+        padding-left: 2rem;
+    }
+    
+    a {
+        color: #00d4ff;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.post-meta {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .post-container {
+        padding: 1rem;
+        margin-top: 4rem;
+    }
+    
+    .post-terminal-body {
+        padding: 15px;
+    }
+}

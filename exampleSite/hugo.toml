@@ -35,7 +35,7 @@ theme = "nomad-tech"
     class = "youtube"
     icon = "📺"
     description = "Tech reviews and nomad vlogs"
-    url = "https://youtube.com/@yourhandle"
+    url = "https://www.youtube.com/@GP_ARC"
     button_text = "Visit Channel"
 
   [[params.social]]
@@ -43,7 +43,7 @@ theme = "nomad-tech"
     class = "wechat"
     icon = "🐦"
     description = "Tech thoughts and daily updates"
-    url = "https://twitter.com/yourhandle"
+    url = "https://x.com/m03315_"
     button_text = "Follow Me"
 
   # Portfolio Items
@@ -88,15 +88,10 @@ theme = "nomad-tech"
     highlights = ["Surfing", "Rice terraces", "Startup scene"]
 
   # Contact Information
-  [[params.contact]]
-    name = "Email"
-    icon = "📧"
-    value = "your@email.com"
-
-  [[params.contact]]
-    name = "Twitter"
-    icon = "🐦"
-    value = "@yourhandle"
+  [params.contact]
+    email = "me@m03315.top"
+    wechat = "m03315_"
+    twitter = "@m03315_"
 
   # Analytics (optional)
-  # googleAnalytics = "G-XXXXXXXXXX"
+  googleAnalytics = "G-2310RJEC91"

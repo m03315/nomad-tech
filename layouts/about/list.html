@@ -1,0 +1,55 @@
+{{ define "main" }}
+<div class="about-container">
+    <article class="about-content">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">{{ .Title }}.md</div>
+        </div>
+        <div class="terminal-body">
+            <div class="prompt-line">
+                <span class="prompt">$</span>
+                <span class="command">cat {{ .Title }}.md</span>
+            </div>
+            <div class="content">
+                {{ .Content }}
+            </div>
+            
+            {{ with .Site.Params.contact }}
+            <div class="contact-section">
+                <div class="prompt-line">
+                    <span class="prompt">$</span>
+                    <span class="command">ls -la contact/</span>
+                </div>
+                <div class="contact-grid">
+                    {{ with .email }}
+                    <div class="contact-file">
+                        <span class="file-icon">📧</span>
+                        <span class="file-name">邮箱.txt</span>
+                        <span class="file-content">{{ . }}</span>
+                    </div>
+                    {{ end }}
+                    {{ with .wechat }}
+                    <div class="contact-file">
+                        <span class="file-icon">💬</span>
+                        <span class="file-name">微信.txt</span>
+                        <span class="file-content">{{ . }}</span>
+                    </div>
+                    {{ end }}
+                    {{ with .twitter }}
+                    <div class="contact-file">
+                        <span class="file-icon">🐦</span>
+                        <span class="file-name">twitter.txt</span>
+                        <span class="file-content">{{ . }}</span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </article>
+</div>
+{{ end }}
