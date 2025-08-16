@@ -38,3 +38,13 @@ other = "Sharing insights and experiences across platforms, welcome to connect"
 other = "Portfolio"
 [view_details]
 other = "View Details"
+[posts_count]
+other = "posts"
+[all_categories]
+other = "All Categories"
+[view_posts]
+other = "View Posts"
+[contact_email]
+other = "email.txt"
+[contact_wechat]
+other = "wechat.txt"

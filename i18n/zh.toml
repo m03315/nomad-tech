@@ -38,3 +38,13 @@ other = "在不同平台分享我的见解和经历，欢迎关注交流"
 other = "作品展示"
 [view_details]
 other = "查看详情"
+[posts_count]
+other = "篇文章"
+[all_categories]
+other = "所有分类"
+[view_posts]
+other = "查看文章"
+[contact_email]
+other = "邮箱.txt"
+[contact_wechat]
+other = "微信.txt"

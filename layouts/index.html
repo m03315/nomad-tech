@@ -5,8 +5,8 @@
         <p>{{ .Site.Params.subtitle | default "数字游民 • 科技探索者 • 生活记录者" }}</p>
         <p>{{ .Site.Params.description | default "分享科技前沿见解，记录数字游民生活，提供实用攻略指南" }}</p>
         <div class="cta-buttons">
-            <a href="/social/" class="btn btn-primary">{{ i18n "follow_social" }}</a>
-            <a href="/about/" class="btn btn-secondary">{{ i18n "learn_more" }}</a>
+            <a href="{{ .Site.BaseURL }}social/" class="btn btn-primary">{{ i18n "follow_social" }}</a>
+            <a href="{{ .Site.BaseURL }}about/" class="btn btn-secondary">{{ i18n "learn_more" }}</a>
         </div>
     </div>
 </section>

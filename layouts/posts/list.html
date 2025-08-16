@@ -4,7 +4,7 @@
         <h2>{{ .Title }}</h2>
         
         <div class="blog-categories" style="text-align: center; margin-bottom: 2rem;">
-            <a href="/posts/" class="category-btn {{ if not .Data.Term }}active{{ end }}">全部</a>
+            <a href="/posts/" class="category-btn {{ if not .Data.Term }}active{{ end }}">{{ i18n "all_posts" }}</a>
             {{ range .Site.Taxonomies.categories }}
             <a href="{{ .Page.Permalink }}" class="category-btn">{{ .Page.Title }}</a>
             {{ end }}
@@ -23,7 +23,7 @@
                 </div>
                 <p>{{ .Summary }}</p>
                 <div class="read-more-container">
-                    <a href="{{ .Permalink }}" class="btn btn-secondary">阅读更多</a>
+                    <a href="{{ .Permalink }}" class="btn btn-secondary">{{ i18n "read_more" }}</a>
                 </div>
             </article>
             {{ end }}
@@ -32,13 +32,13 @@
         {{ if gt $paginator.TotalPages 1 }}
         <div class="pagination" style="text-align: center; margin-top: 2rem;">
             {{ if $paginator.HasPrev }}
-            <a href="{{ $paginator.Prev.URL }}" class="btn btn-secondary">上一页</a>
+            <a href="{{ $paginator.Prev.URL }}" class="btn btn-secondary">{{ i18n "prev_page" }}</a>
             {{ end }}
             {{ range $paginator.Pagers }}
             <a href="{{ .URL }}" class="btn {{ if eq . $paginator }}btn-primary{{ else }}btn-secondary{{ end }}">{{ .PageNumber }}</a>
             {{ end }}
             {{ if $paginator.HasNext }}
-            <a href="{{ $paginator.Next.URL }}" class="btn btn-secondary">下一页</a>
+            <a href="{{ $paginator.Next.URL }}" class="btn btn-secondary">{{ i18n "next_page" }}</a>
             {{ end }}
         </div>
         {{ end }}

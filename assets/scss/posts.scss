@@ -96,6 +96,26 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.post-categories {
+    margin-top: 0.5rem;
+    
+    .category-tag {
+        background: rgba(0, 212, 255, 0.2);
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        margin-right: 5px;
+        color: #00d4ff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background: rgba(0, 212, 255, 0.3);
+            color: #fff;
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .post-container {
         padding: 1rem;
