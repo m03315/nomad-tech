@@ -18,37 +18,21 @@
                 {{ .Content }}
             </div>
             
-            {{ with .Site.Params.contact }}
             <div class="contact-section">
                 <div class="prompt-line">
                     <span class="prompt">$</span>
                     <span class="command">ls -la contact/</span>
                 </div>
                 <div class="contact-grid">
-                    {{ with .email }}
+                    {{ range .Site.Params.contact }}
                     <div class="contact-file">
-                        <span class="file-icon">📧</span>
-                        <span class="file-name">{{ i18n "contact_email" }}</span>
-                        <span class="file-content">{{ . }}</span>
-                    </div>
-                    {{ end }}
-                    {{ with .wechat }}
-                    <div class="contact-file">
-                        <span class="file-icon">💬</span>
-                        <span class="file-name">{{ i18n "contact_wechat" }}</span>
-                        <span class="file-content">{{ . }}</span>
-                    </div>
-                    {{ end }}
-                    {{ with .twitter }}
-                    <div class="contact-file">
-                        <span class="file-icon">🐦</span>
-                        <span class="file-name">twitter.txt</span>
-                        <span class="file-content">{{ . }}</span>
+                        <span class="file-icon">{{ .icon }}</span>
+                        <span class="file-name">{{ .name | lower }}.txt</span>
+                        <span class="file-content">{{ .value }}</span>
                     </div>
                     {{ end }}
                 </div>
             </div>
-            {{ end }}
         </div>
     </article>
 </div>

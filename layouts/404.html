@@ -1,0 +1,58 @@
+{{ define "main" }}
+<div class="about-container">
+    <article class="about-content">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">404.md</div>
+        </div>
+        <div class="terminal-body">
+            <div class="prompt-line">
+                <span class="prompt">$</span>
+                <span class="command">cat 404.md</span>
+            </div>
+            <div class="error-content">
+                <h1 style="color: #ff5f57; font-size: 4rem; margin: 2rem 0 1rem 0; text-align: center;">404</h1>
+                <h2 style="color: #00d4ff; margin-bottom: 1rem; text-align: center;">Page Not Found</h2>
+                <p style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">
+                    The page you're looking for doesn't exist or has been moved.
+                </p>
+                
+                <div class="prompt-line">
+                    <span class="prompt">$</span>
+                    <span class="command">ls -la /</span>
+                </div>
+                
+                <div class="file-listing" style="margin: 1rem 0 2rem 0;">
+                    <div class="file-item">
+                        <span style="color: #00d4ff;">📁</span>
+                        <a href="{{ .Site.BaseURL }}" style="color: #9d50bb; text-decoration: none;">home/</a>
+                    </div>
+                    <div class="file-item">
+                        <span style="color: #00d4ff;">📁</span>
+                        <a href="{{ .Site.BaseURL }}posts/" style="color: #9d50bb; text-decoration: none;">posts/</a>
+                    </div>
+                    <div class="file-item">
+                        <span style="color: #00d4ff;">📁</span>
+                        <a href="{{ .Site.BaseURL }}about/" style="color: #9d50bb; text-decoration: none;">about/</a>
+                    </div>
+                    <div class="file-item">
+                        <span style="color: #00d4ff;">📁</span>
+                        <a href="{{ .Site.BaseURL }}social/" style="color: #9d50bb; text-decoration: none;">social/</a>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="{{ .Site.BaseURL }}" class="btn btn-primary" style="margin-right: 1rem;">Go Home</a>
+                    <a href="{{ .Site.BaseURL }}posts/" class="btn btn-secondary">Browse Posts</a>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+
+{{ end }}
