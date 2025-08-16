@@ -444,6 +444,9 @@ section {
 // Posts page styles
 @import 'posts';
 
+// 404 page styles
+@import '404';
+
 // Reduced motion
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

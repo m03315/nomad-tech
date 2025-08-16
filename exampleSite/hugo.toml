@@ -91,7 +91,17 @@ theme = "nomad-tech"
     highlights = ["Surfing", "Rice terraces", "Startup scene"]
 
   # Contact Information
-  [params.contact]
-    email = "me@m03315.top"
-    wechat = "m03315_"
-    twitter = "@m03315_"
+  [[params.contact]]
+    icon = "📧"
+    name = "email"
+    value = "me@m03315.top"
+  
+  [[params.contact]]
+    icon = "💬"
+    name = "wechat"
+    value = "m03315_"
+  
+  [[params.contact]]
+    icon = "🐦"
+    name = "twitter"
+    value = "@m03315_"
