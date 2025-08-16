@@ -16,8 +16,12 @@
             </div>
             <div class="post-meta">
                 <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-                {{ range .Params.categories }}
-                <span class="category-tag">{{ . }}</span>
+                {{ if .Params.categories }}
+                <div class="post-categories">
+                    {{ range .Params.categories }}
+                    <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="category-tag">{{ . }}</a>
+                    {{ end }}
+                </div>
                 {{ end }}
             </div>
             <div class="content">

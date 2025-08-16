@@ -38,3 +38,13 @@ other = "Partage d'idées et d'expériences sur différentes plateformes"
 other = "Portfolio"
 [view_details]
 other = "Voir Détails"
+[posts_count]
+other = "articles"
+[all_categories]
+other = "Toutes les Catégories"
+[view_posts]
+other = "Voir Articles"
+[contact_email]
+other = "email.txt"
+[contact_wechat]
+other = "wechat.txt"

@@ -28,14 +28,14 @@
                     {{ with .email }}
                     <div class="contact-file">
                         <span class="file-icon">📧</span>
-                        <span class="file-name">邮箱.txt</span>
+                        <span class="file-name">{{ i18n "contact_email" }}</span>
                         <span class="file-content">{{ . }}</span>
                     </div>
                     {{ end }}
                     {{ with .wechat }}
                     <div class="contact-file">
                         <span class="file-icon">💬</span>
-                        <span class="file-name">微信.txt</span>
+                        <span class="file-name">{{ i18n "contact_wechat" }}</span>
                         <span class="file-content">{{ . }}</span>
                     </div>
                     {{ end }}
