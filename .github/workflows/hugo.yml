@@ -58,7 +58,7 @@ jobs:
         uses: actions/configure-pages@v5
         
       - name: Download build artifacts
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: hugo-site
           path: ./public
